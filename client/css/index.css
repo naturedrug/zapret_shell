@@ -1,0 +1,122 @@
+html, body {
+  margin: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(25,25,25);
+}
+
+@font-face {
+  font-family: "Ultra";
+  src: local("Ultra"),
+    url("../fonts/Ultra-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  color: white;
+  margin: 0;
+  font-family: "Ultra";
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #161616;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: rgb(255, 255, 255);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: #2196F3;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+main {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.zapretFolder {
+  cursor: pointer;
+  position: fixed;
+  right: 15px;
+  top: 15px; 
+  border-radius: 20px;
+  background-color: white;
+  transition: all .2s;
+  padding: 10px;
+  text-align: center;
+}
+
+.zapretFolder * {
+  font-family: sans-serif;
+  color: #161616;
+}
+
+.zapretFolder:hover {
+  background-color: rgb(209, 209, 209);
+}
+
+.zapretFolder p {
+  color: black;
+  font-size: 100%;
+}
+
+.zapretFolder .folderValue {
+  text-align: center;
+  color: #2c2c2c;
+  font-size: 0.9rem;
+}
