@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../client/css/index.css">
+    <link rel="stylesheet" href="../client/css/options.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zapret</title>
+</head>
+
+<body>
+    <main>
+        <h1>zapret</h1>
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+
+        <label for="alt" class="selectAlt">
+            <select name="" id="alt">
+
+            </select>
+        </label>
+
+        <div class="options">
+
+            <div class="ipsetlist btn option" onclick="window.electron.openOptions()">
+                <p>ipset list</p>
+            </div>
+            <div class="ipsetlist btn option">
+                <p>ipset list</p>
+            </div>
+            <div class="ipsetlist btn option">
+                <p>ipset list</p>
+            </div>
+        </div>
+
+
+
+
+        <div class="service">
+
+        </div>
+
+        <div class="zapretFolder btn">
+
+            <p>zapret folder</p>
+            <span class="folderValue"></span>
+        </div>
+    </main>
+</body>
+<script src="../client/js/zapret.js"></script>
+
+
+</html>

@@ -6,12 +6,35 @@ const zapretFolderValue = document.querySelector(".zapretFolder .folderValue")
 
 let zapretStatus = false // zapret turn status
 
+const selectAlt = document.querySelector(".selectAlt select")
+
+selectAlt.addEventListener("change", (e) => {
+    console.log("chosen:" + selectAlt.value)
+
+    window.electron.changeALT(selectAlt.value)
+})
+
 window.onload = async () => {
 
     const config = await window.electron.getConfig()
-    
-    console.log(config)
+
     zapretFolderValue.textContent = config['zapret-directory']
+
+
+    const alts = await window.electron.getALTS()
+
+    alts.forEach(alt => {
+        const newOption = document.createElement("option")
+        newOption.textContent = alt
+
+
+
+
+
+        selectAlt.appendChild(newOption)
+    });
+
+    console.log(alts)
 }
 
 

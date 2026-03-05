@@ -1,8 +1,9 @@
-html, body {
+html,
+body {
   margin: 0;
   min-width: 100vw;
   min-height: 100vh;
-  background-color: rgb(25,25,25);
+  background-color: rgb(25, 25, 25);
 }
 
 @font-face {
@@ -89,25 +90,33 @@ main {
   gap: 20px;
 }
 
-.zapretFolder {
+main h1 {
+  font-size: 2.8rem;
+}
+
+.btn {
   cursor: pointer;
-  position: fixed;
-  right: 15px;
-  top: 15px; 
   border-radius: 20px;
   background-color: white;
   transition: all .2s;
   padding: 10px;
   text-align: center;
+  font-size: 100%;
 }
 
-.zapretFolder * {
+.btn * {
   font-family: sans-serif;
   color: #161616;
 }
 
-.zapretFolder:hover {
+.btn:hover {
   background-color: rgb(209, 209, 209);
+}
+
+.zapretFolder {
+  position: fixed;
+  right: 15px;
+  top: 15px;
 }
 
 .zapretFolder p {
@@ -119,4 +128,14 @@ main {
   text-align: center;
   color: #2c2c2c;
   font-size: 0.9rem;
+}
+
+.selectAlt select {
+  outline: none;
+  background-color: white;
+}
+
+.selectAlt select option,
+.selectAlt select {
+  color: #161616;
 }
