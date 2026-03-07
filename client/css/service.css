@@ -1,0 +1,60 @@
+.service {
+    width: 100%;
+    overflow: hidden;
+    height: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+    transition: all 0.3s;
+    position: fixed;
+    bottom: 0px;
+    background-color: black;
+    padding-top: 15px;
+}
+
+.service:hover {
+    height: 40%;
+}
+
+.service .list {
+    width: 100%;
+}
+
+.serviceItem {
+    background-color: white;
+    color: black;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+.service .list p {
+    color: black;
+    height: 50%;
+}
+
+.service .list select {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 50%;
+    background-color: white;
+    color: black;
+    transition: all 0.2s;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.service .list select:hover {
+    background-color: rgb(200,200,200);
+}
+
+.service .list select option {
+    width: 100%;
+    color: black;
+    border-radius: 20px;
+}

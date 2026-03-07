@@ -13,7 +13,9 @@ contextBridge.exposeInMainWorld("electron", {
 
     getIpsetList: () => ipcRenderer.invoke("get-ipset"),
 
-    newIpset: (ipset) => ipcRenderer.invoke("new-ipset", ipset)
+    newIpset: (ipset) => ipcRenderer.invoke("new-ipset", ipset),
+
+    switchGameFilter: (mode) => ipcRenderer.invoke("switch-game-filter", mode)
 })
 
 ipcRenderer.invoke("get-alts")

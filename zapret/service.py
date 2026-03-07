@@ -2,9 +2,11 @@ import subprocess
 import os
 import json
 
+# all paths from app.js!!!
+
 class Zapret:
     def __init__(self):
-        with open("../config.json", encoding="utf-8") as file:
+        with open("./config.json", encoding="utf-8") as file:
             file_d = json.load(file)
 
             self.zapret_path = file_d["zapret-directory"]

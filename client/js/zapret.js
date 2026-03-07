@@ -14,12 +14,10 @@ selectAlt.addEventListener("change", (e) => {
     window.electron.changeALT(selectAlt.value)
 })
 
-window.onload = async () => {
-
+window.addEventListener("load", async () => {
     const config = await window.electron.getConfig()
 
     zapretFolderValue.textContent = config['zapret-directory']
-
 
     const alts = await window.electron.getALTS()
 
@@ -27,15 +25,10 @@ window.onload = async () => {
         const newOption = document.createElement("option")
         newOption.textContent = alt
 
-
-
-
-
         selectAlt.appendChild(newOption)
     });
+})
 
-    console.log(alts)
-}
 
 
 
@@ -54,7 +47,7 @@ switchBtn.addEventListener("change", () => {
 zapretFolder.addEventListener("click", async () => {
     const folder = await window.electron.selectZapretFolder()
 
-    
+
 
     zapretFolderValue.textContent = folder
 })

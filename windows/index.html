@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="../client/css/index.css">
     <link rel="stylesheet" href="../client/css/options.css">
+    <link rel="stylesheet" href="../client/css/service.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>zapret</title>
@@ -40,7 +41,25 @@
 
 
         <div class="service">
-
+            <label class="gameFilter serviceItem list">
+                <p>Game Filter: ???</p>
+                <select name="" id="">
+                    <option value="all">TCP and UDP</option>
+                    <option value="udp">UDP</option>
+                    <option value="tcp">TCP</option>
+                    <option value="none">DISABLED</option>
+                </select>
+            </label>
+            <label class="ipsetFilter serviceItem list">
+                <p>Ipset Filter: ???</p>
+                <select name="" id="">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                </select>
+            </label>
+            <button class="serviceItem btn">Check status</button>
+            <button class="serviceItem btn">Check updates</button>
         </div>
 
         <div class="zapretFolder btn">
@@ -51,6 +70,7 @@
     </main>
 </body>
 <script src="../client/js/zapret.js"></script>
+<script src="../client/js/serviceClient.js"></script>
 
 
 </html>

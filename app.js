@@ -9,6 +9,8 @@ import fs from "fs"
 
 import { Tray, Menu } from "electron/main";
 
+import "./handlers/service.js"
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
