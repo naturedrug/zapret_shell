@@ -24,23 +24,8 @@
             </select>
         </label>
 
-        <div class="options">
-
-            <div class="ipsetlist btn option" onclick="window.electron.openOptions()">
-                <p>ipset list</p>
-            </div>
-            <div class="ipsetlist btn option">
-                <p>ipset list</p>
-            </div>
-            <div class="ipsetlist btn option">
-                <p>ipset list</p>
-            </div>
-        </div>
-
-
-
-
-        <div class="service">
+        <div class="service" tabindex="0">
+            <div class="serviceOpenLine"></div>
             <label class="gameFilter serviceItem list">
                 <p>Game Filter: ???</p>
                 <select name="" id="">
@@ -50,16 +35,11 @@
                     <option value="none">DISABLED</option>
                 </select>
             </label>
-            <label class="ipsetFilter serviceItem list">
-                <p>Ipset Filter: ???</p>
-                <select name="" id="">
-                    <option value="">1</option>
-                    <option value="">2</option>
-                    <option value="">3</option>
-                </select>
-            </label>
-            <button class="serviceItem btn">Check status</button>
-            <button class="serviceItem btn">Check updates</button>
+            <button class="serviceItem btn" onclick="window.electron.checkStatus()">Check status</button>
+            <button class="serviceItem btn" onclick="window.electron.checkUpdates()">Check updates</button>
+            <button class="serviceItem btn" onclick="window.electron.openOptions()">Domains</button>
+            <button class="serviceItem btn" onclick="window.electron.openOptions()">Domains</button>
+            <button class="serviceItem btn" onclick="window.electron.openOptions()">Domains</button>
         </div>
 
         <div class="zapretFolder btn">

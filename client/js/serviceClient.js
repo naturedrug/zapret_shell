@@ -15,14 +15,10 @@ window.addEventListener("load", async () => {
 
 
 gameFilterSelect.addEventListener("change", (e) => {
-
     
     gameFilterState = gameFilterSelect.value
     
     window.electron.switchGameFilter(gameFilterState)
-    console.log(gameFilterState)
-
-
 
     gameFilterLabel.textContent = `Game Filter: ${gameFilterState}`
 })

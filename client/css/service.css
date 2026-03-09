@@ -6,7 +6,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 30px;
+    gap: 15px;
     transition: all 0.3s;
     position: fixed;
     bottom: 0px;
@@ -14,12 +14,22 @@
     padding-top: 15px;
 }
 
-.service:hover {
+.service:focus-within {
     height: 40%;
 }
 
-.service .list {
+.service:focus-within .serviceOpenLine {
+    display: none;
+}
+
+.serviceOpenLine {
+    z-index: 9999;
     width: 100%;
+    position: absolute;
+    height: 100%;
+    cursor: pointer;
+    left: 0px;
+    top: 0px;
 }
 
 .serviceItem {

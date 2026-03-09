@@ -6,10 +6,15 @@ import json
 
 class Zapret:
     def __init__(self):
-        with open("./config.json", encoding="utf-8") as file:
-            file_d = json.load(file)
+        try:
+            with open("./config.json", encoding="utf-8") as file:
+                file_d = json.load(file)
+                self.zapret_path = file_d["zapret-directory"]
 
-            self.zapret_path = file_d["zapret-directory"]
+        except:
+            with open("../config.json", encoding="utf-8") as file:
+                file_d = json.load(file)
+                self.zapret_path = file_d["zapret-directory"]
 
 
     
@@ -27,7 +32,7 @@ class Zapret:
     
     
     def status(self):
-        return self.run("status_zapret")
+        return self.run("status_zapret").stdout
 
     
     def check_updates(self):

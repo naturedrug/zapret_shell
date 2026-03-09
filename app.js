@@ -25,6 +25,9 @@ let zapretFolder = config["zapret-directory"]
 let mainWindow
 let optionsWindow;
 
+
+let tray = null
+
 async function changeVBSTarget(bat, batPath) {
 
     // change bat for starting in vbs file
@@ -170,13 +173,13 @@ ipcMain.handle("open-options", () => {
                 preload: path.join(__dirname, "preload.js")
             }
         })
-    
+
         options.on("close", (e) => {
             e.preventDefault()
-    
+
             options.hide()
         })
-    
+
         options.loadFile("./windows/ipsetlist.html")
 
         optionsWindow = options
@@ -207,12 +210,24 @@ app.on('window-all-closed', () => {
     console.log("closed")
 })
 
+function exit() {
+    if (tray) {
+
+        console.log("destroy")
+
+        tray.destroy()
+        tray = null
+    }
+
+    app.exit()
+}
+
 app.whenReady().then(() => {
-    const tray = new Tray(path.join(__dirname, "icon.png"))
+    tray = new Tray(path.join(__dirname, "icon.png"))
     createWindow()
 
     const contextMenu = Menu.buildFromTemplate([
-        { label: "Закрыть", click: () => app.exit() }
+        { label: "Закрыть", click: () => exit() }
     ])
     tray.setContextMenu(contextMenu)
 
